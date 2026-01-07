@@ -3,7 +3,7 @@ from typing import List, Tuple, Dict
 from app.transform.viacep_client import fetch_cep
 
 
-def transform_ceps(ceps: List[str]) -> Tuple[List[Dict], List[str]]:
+def transform_ceps(ceps: List[str], max_workers=10) -> Tuple[List[Dict], List[str]]:
     """
     Enrich CEPs using ViaCEP API.
     Returns:
@@ -12,7 +12,7 @@ def transform_ceps(ceps: List[str]) -> Tuple[List[Dict], List[str]]:
     """
     addresses = []
     failed_ceps = []
-    with ThreadPoolExecutor(max_workers=10) as executor:
+    with ThreadPoolExecutor(max_workers=max_workers) as executor:
         future_map = {}
         for cep in ceps:
             future = executor.submit(fetch_cep, cep)
