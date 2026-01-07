@@ -19,7 +19,8 @@ def is_valid_cep(cep: str) -> bool:
 
 def extract_ceps(csv_path: str) -> Tuple[List[str], List[str]]:
     """
-    Reads a CSV file containing postal codes and separates valid and invalid postal codes.
+    Reads a CSV file containing postal codes and separates
+    valid and invalid postal codes.
     Returns:
     - list of valid postal codes
     - list of invalid postal codes
@@ -33,6 +34,4 @@ def extract_ceps(csv_path: str) -> Tuple[List[str], List[str]]:
             valid_ceps.append(cep)
         else:
             invalid_ceps.append(raw_cep)
-
     return valid_ceps, invalid_ceps
-
