@@ -3,7 +3,8 @@ from typing import List, Tuple, Dict
 from app.transform.viacep_client import fetch_cep
 
 
-def transform_ceps(ceps: List[str], max_workers=10) -> Tuple[List[Dict], List[str]]:
+def transform_ceps(ceps: List[str],
+                   max_workers=10) -> Tuple[List[Dict], List[str]]:
     """
     Enrich CEPs using ViaCEP API.
     Returns:
