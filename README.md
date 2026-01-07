@@ -15,3 +15,9 @@ O projeto segue uma arquitetura ETL com separação de responsabilidades:
 ## Qualidade
 O projeto utiliza GitHub Actions para validação automática do código.
 Atualmente, o pipeline executa lint com flake8.
+
+## Dados de Entrada
+
+Os CEPs utilizados no pipeline são gerados localmente por meio de um script auxiliar,
+localizado em `scripts/generate_ceps.py`. O arquivo CSV gerado não é versionado e é
+utilizado apenas como dado de entrada para o ETL.
