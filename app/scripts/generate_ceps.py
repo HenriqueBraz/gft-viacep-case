@@ -10,6 +10,7 @@ def generate_ceps(quantity=10000):
         ceps.add(cep)
     return ceps
 
+
 def generate_ceps_csv(csv_path):
     ceps = generate_ceps()
     with open(csv_path, "w", newline="") as file:
@@ -17,4 +18,3 @@ def generate_ceps_csv(csv_path):
         writer.writerow(["cep"])
         for cep in ceps:
             writer.writerow([cep])
-
