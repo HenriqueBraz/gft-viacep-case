@@ -10,12 +10,11 @@ def generate_ceps(quantity=10000):
         ceps.add(cep)
     return ceps
 
-
-if __name__ == "__main__":
-
+def generate_ceps_csv(csv_path):
     ceps = generate_ceps()
-    with open("data/ceps.csv", "w", newline="") as file:
+    with open(csv_path, "w", newline="") as file:
         writer = csv.writer(file)
         writer.writerow(["cep"])
         for cep in ceps:
             writer.writerow([cep])
+

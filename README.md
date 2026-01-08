@@ -106,6 +106,35 @@ Os testes podem ser executados localmente com:
 ```
 pytest
 ```
+### Execução com Docker
+
+O projeto pode ser executado via Docker, garantindo reprodutibilidade do ambiente
+e evitando dependências locais de Python.
+
+## Build da imagem
+
+```
+docker build -t gft-viacep-case .
+```
+Execução do container
+```
+docker run --rm gft-viacep-case
+```
+Por padrão, o container executa o pipeline em modo mock, evitando dependência de
+acesso externo ao serviço ViaCEP. 
+Esta opção pode ser modificada no Docckerfile:
+```
+ENV USE_MOCK_VIACEP=true
+```
+Durante a execução, o pipeline:
+
+ - Gera automaticamente o arquivo de entrada caso não exista
+
+ - Exibe o progresso da etapa de transformação
+
+ - Persiste os dados processados no diretório interno data/
+
+ - Caso desejado, o diretório de dados pode ser persistido localmente utilizando volumes.
 
 ### Dados de Saída
 Os arquivos gerados pelo pipeline incluem:
