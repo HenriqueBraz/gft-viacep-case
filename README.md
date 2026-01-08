@@ -106,17 +106,17 @@ Os testes podem ser executados localmente com:
 ```
 pytest
 ```
-### Execução com Docker
+## Execução com Docker
 
 O projeto pode ser executado via Docker, garantindo reprodutibilidade do ambiente
 e evitando dependências locais de Python.
 
-## Build da imagem
+### Build da imagem
 
 ```
 docker build -t gft-viacep-case .
 ```
-Execução do container
+### Execução do container
 ```
 docker run --rm gft-viacep-case
 ```
@@ -148,7 +148,7 @@ Os arquivos gerados pelo pipeline incluem:
 No repositório, são versionadas apenas amostras de saída para fins de demonstração.
 Os dados completos gerados em execuções locais são ignorados via .gitignore.
 
-### Observações Finais
+## Observações Finais
 
 Este projeto foi desenvolvido com foco em:
 
