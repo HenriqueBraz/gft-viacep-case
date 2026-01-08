@@ -18,3 +18,7 @@ def generate_ceps_csv(csv_path):
         writer.writerow(["cep"])
         for cep in ceps:
             writer.writerow([cep])
+
+
+if __name__ == "__main__":
+    generate_ceps_csv("data/ceps.csv")
