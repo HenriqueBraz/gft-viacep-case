@@ -90,22 +90,8 @@ python app/main.py
 O modo mock é utilizado apenas para execução local e não altera o comportamento
 esperado em produção.
 
-### Qualidade e Testes
-O projeto adota práticas de qualidade de código, incluindo:
+---
 
- - Testes unitários para as camadas Extract, Transform e Load
-
- - Mock de dependências externas (ViaCEP) nos testes
-
- - Lint automático com flake8
-
- - Integração contínua com GitHub Actions
-
-Os testes podem ser executados localmente com:
-
-```
-pytest
-```
 ## Execução com Docker
 
 O projeto pode ser executado via Docker, garantindo reprodutibilidade do ambiente
@@ -136,6 +122,27 @@ Durante a execução, o pipeline:
 
  - Caso desejado, o diretório de dados pode ser persistido localmente utilizando volumes.
 
+---
+
+### Qualidade e Testes
+O projeto adota práticas de qualidade de código, incluindo:
+
+ - Testes unitários para as camadas Extract, Transform e Load
+
+ - Mock de dependências externas (ViaCEP) nos testes
+
+ - Lint automático com flake8
+
+ - Integração contínua com GitHub Actions
+
+Os testes podem ser executados localmente com:
+
+```
+pytest
+```
+
+---
+
 ### Dados de Saída
 Os arquivos gerados pelo pipeline incluem:
 
@@ -147,6 +154,8 @@ Os arquivos gerados pelo pipeline incluem:
 
 No repositório, são versionadas apenas amostras de saída para fins de demonstração.
 Os dados completos gerados em execuções locais são ignorados via .gitignore.
+
+---
 
 ## Observações Finais
 
