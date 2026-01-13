@@ -155,22 +155,6 @@ Os arquivos gerados pelo pipeline incluem:
 No repositório, são versionadas apenas amostras de saída para fins de demonstração.
 Os dados completos gerados em execuções locais são ignorados via .gitignore.
 
----
-
-## Observações Finais
-
-Este projeto foi desenvolvido com foco em:
-
- - Clareza arquitetural
-
- - Robustez frente a falhas externas
-
- - Facilidade de manutenção
-
- - Boas práticas de engenharia de dados
-
-O pipeline pode ser facilmente adaptado para execução em ambientes distribuídos,
-processamento em batch ou integração com orquestradores como Airflow.
 
 
 
