@@ -15,6 +15,8 @@ def create_session() -> requests.Session:
 
 
 session = create_session()
+
+
 def fetch_cep(
     cep: str,
     timeout: int = 3,
@@ -36,6 +38,7 @@ def fetch_cep(
             "ibge": "3550308",
             "ddd": "11",
         }
+
     for attempt in range(retries + 1):
         try:
             response = session.get(f"{VIACEP_URL}{cep}/json/",
