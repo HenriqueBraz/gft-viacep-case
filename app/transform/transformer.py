@@ -6,7 +6,7 @@ from app.transform.viacep_client import fetch_cep
 
 def transform_ceps(
     ceps: List[str],
-    max_workers: int = 20,
+    max_workers: int = 10,
 ) -> Tuple[List[Dict], List[str]]:
     """
     Enrich CEPs using ViaCEP API.
@@ -40,4 +40,5 @@ def transform_ceps(
                     failed_ceps.append(cep)
 
                 progress.advance(task)
+
     return addresses, failed_ceps

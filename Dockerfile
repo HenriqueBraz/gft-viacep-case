@@ -9,5 +9,4 @@ COPY requirements.txt .
 RUN pip install --no-cache-dir -r requirements.txt
 COPY . .
 ENV PYTHONPATH=/gft-viacep-case
-ENV USE_MOCK_VIACEP=true
 CMD ["python", "app/main.py"]

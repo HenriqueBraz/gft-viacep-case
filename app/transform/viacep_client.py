@@ -1,12 +1,20 @@
-import os
 import time
 import requests
 from typing import Dict, Optional
 
 VIACEP_URL = "https://viacep.com.br/ws/"
-USE_MOCK = os.getenv("USE_MOCK_VIACEP", "false").lower() == "true"
+# Temporary flag.
+# The environment variable implementation was removed to keep
+# the portfolio project deterministic.
+ENABLE_MOCK = False
 
 
+def create_session() -> requests.Session:
+    session = requests.Session()
+    return session
+
+
+session = create_session()
 def fetch_cep(
     cep: str,
     timeout: int = 3,
@@ -16,7 +24,7 @@ def fetch_cep(
     """
     Fetch address data from ViaCEP API with retry and backoff.
     """
-    if USE_MOCK:
+    if ENABLE_MOCK:
         return {
             "cep": cep,
             "logradouro": "Rua Exemplo",
@@ -30,13 +38,12 @@ def fetch_cep(
         }
     for attempt in range(retries + 1):
         try:
-            response = requests.get(f"{VIACEP_URL}{cep}/json/",
+            response = session.get(f"{VIACEP_URL}{cep}/json/",
                                     timeout=timeout)
             response.raise_for_status()
             data = response.json()
             if data.get("erro"):
                 return None
-
             return data
 
         except requests.Timeout:
