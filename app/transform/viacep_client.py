@@ -42,7 +42,7 @@ def fetch_cep(
     for attempt in range(retries + 1):
         try:
             response = session.get(f"{VIACEP_URL}{cep}/json/",
-                                    timeout=timeout)
+            timeout=timeout)
             response.raise_for_status()
             data = response.json()
             if data.get("erro"):
