@@ -27,8 +27,8 @@ app/
 ## Installation
 
 ```bash
-git clone https://github.com/<username>/gft-viacep-case.git
-cd gft-viacep-case
+git clone https://github.com/<username>/gft-viacep.git
+cd gft-viacep
 
 python -m venv .venv
 
@@ -60,13 +60,13 @@ pytest
 Build:
 
 ```bash
-docker build -t gft-viacep-case .
+docker build -t gft-viacep .
 ```
 
 Run:
 
 ```bash
-docker run --rm gft-viacep-case
+docker run --rm gft-viacep
 ```
 
 ## Output
