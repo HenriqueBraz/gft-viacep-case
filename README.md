@@ -1,4 +1,4 @@
-# GFT ViaCEP ETL Pipeline
+# ViaCEP ETL Pipeline
 
 A simple ETL pipeline in Python that reads Brazilian postal codes (CEP), retrieves address information from the ViaCEP API, and stores the results in multiple output formats.
 This project was built as a study case focused on ETL pipelines, concurrent API requests, and data persistence using Python.
